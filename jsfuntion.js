@@ -1,5 +1,5 @@
 const colors = ["#FF5733", "#33FF57", "#3357FF", "#F4D03F", "#8E44AD", "#16A085", "#E74C3C", "#2ECC71"];
-
+//get random color
 document.getElementById("color-btn").addEventListener("click", function () {
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
     document.body.style.backgroundColor = randomColor;
@@ -8,7 +8,7 @@ document.getElementById("color-btn").addEventListener("click", function () {
 document.getElementById("nextbtn").addEventListener("click", function () {
     window.location.href = "question/index.html";
 });
-
+//get current time and date when loading website
 document.addEventListener("DOMContentLoaded", updateDate);
 function updateDate() {
     const dateElement = document.getElementById("current-date");
@@ -20,11 +20,11 @@ function updateDate() {
     dateElement.innerText = formattedDate;
 }
 
-
+//convert innertext on float
 function getInputValueById(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
-
+//working button functionally
 function updateTask(buttonId, taskName) {
     const button = document.getElementById(buttonId);
     button.disabled = true;
@@ -52,8 +52,12 @@ function updateTask(buttonId, taskName) {
     
     const container = document.getElementById("container");
     container.appendChild(p);
-    container.style.backgroundColor = "lightblue";
     container.style.padding = "5px";
+    p.style.marginTop = "10px";
+    p.style.padding = "5px";
+    p.style.borderRadius = "4px"
+    p.style.backgroundColor = "lightblue";
+    
 }
 
 // For acces dynamically
@@ -65,7 +69,7 @@ const taskList = [
     { id: "btn5", name: "Integrate OpenAI API" },
     { id: "btn6", name: "Improve Job Searching" }
 ];
-
+//for each completation headline
 taskList.forEach(task => {
     document.getElementById(task.id).addEventListener("click", function () {
         updateTask(task.id, task.name);
