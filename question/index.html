@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard-Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-100">
+    <header class="max-w-screen-xl mx-auto py-2 ">
+        <div class="flex justify-between bg-white rounded-md">
+            <div class="flex mt-2">
+                <img class="p-2 w-10 h-10" src="/assets/logo.png" alt="">
+                <h1 class="mt-2">Dev<span class="font-bold">Board</span></h1>
+            </div>
+            <div class="p-2"><button id="back" class="p-2 bg-blue-800 rounded-md hover:cursor-pointer text-white">Back to Desk</button></div>
+        </div>
+           
+        
+                
+            
+    </header>
+    
+        <main class="max-w-screen-xl mx-auto pb-10">
+            <h1 class="text-center my-5 font-bold">Blogs</h1>
+
+            <div class="bg-white p-3 rounded-md">
+                <h1 class="font-bold">Question-1: What are the different ways to select an element in the DOM?</h1>
+                <br>
+                <p><span class="font-bold">Ans:</span> getElementById(): Select an element by its id, getElementByClassName(): Selects element by their class name, getElementByTagName(): Selects elements by their tag name, getElementsByName: Selects elements by their name arrribute, querSelectorAll(): Selects all elements matching a css selector, querySelector(): Selects the first element matching a css selector, closest(): Finds the nearest ancestor matching a css selector.</p>
+            </div>
+            <div class="bg-white p-3 my-3 rounded-md">
+                <h1 class="font-bold">Question-2: What is the difference between innerHTML, innerText, and textContent?</h1><br>
+                <p><span class="font-bold">Ans:</span> innerHTML: Sets HTML content, including tags, innerText: Sets visible text, considering css style, textContent: Sets all text, no tags.</p>
+
+            </div>
+            <div class="bg-white p-3 my-3 rounded-md">
+                <h1 class="font-bold">Question-3: What is event delegation in the DOM?</h1><br>
+                <p><span class="font-bold">Ans:</span> Event delegation is when you attach a single event listener to a parent element, and it handles events from child elements through event bubbling. This reduces the number of listeners and works well for dynamically added elements.</p>
+            </div>
+            <div class="bg-white p-3 my-3 rounded-md">
+                <h1 class="font-bold">Question-4: What is event bubbling in the DOM?</h1><br>
+                <p><span class="font-bold">Ans: </span>Event bubbling is when an event starts at the target element and bubbles up to its parent elements. You can stop it with event.stopPropagation(). It helps with event delegation and managing events efficiently.</p>
+            </div>
+            <div class="bg-white p-3   rounded-md ">
+                <h1 class="font-bold">Question-5: How do you create, add, and remove elements using JavaScript?</h1><br>
+                <p><span class="font-bold">Ans: </span>To create an element: document.createElement(), To add it: appendChild() or insertBedore(), To remove it: removeChild() or remove().</p>
+            </div>
+        </main>
+
+        <script src="back.js"></script>
+
+</body>
+</html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment-5</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>DevBoard</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,55 +14,61 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     
     </style>
-
+ 
 
 
 </head>
-<body class="bg-blue-40 max-w-screen-2xl mx-auto font-poppins">
-    <header>
-        <div class="navbar bg-white mb-5">
-            <div class="flex-1 p-2">
+<body class="bg-blue-100 ">
+    <header class="max-w-screen-xl mx-auto py-2 ">
+        <div class="navbar bg-white rounded-xl flex justify-between">
+            <div class="flex p-2">
                 <img class="" src="assets/logo.png" alt="">
-              <h1 class="text-2xl ml-2">Dev<span class="font-bold ">Board</span></h1>
+              <h1 class="text-2xl ml-2 mt-2">Dev<span class="font-bold ">Board</span></h1>
             </div>
-            <div class="bg-blue-100 rounded-3xl p-3">
-                <img src="assets/checkbox.png" alt="">
-                <span class="p-2 font-bold text-2xl ml-2">23</span>
+            <div class="flex"> 
+                <div class="bg-blue-100 rounded-3xl p-3 flex">
+                    <img class="w-10 h-10 mt-1" src="assets/checkbox.png" alt="">
+                    <span id="taskCount" class="p-2 font-bold text-2xl ml-2">23</span>
+                </div>
+                <div class="ml-5 bg-blue-100 p-2 rounded-full">
+                    <button  id="color-btn"><img class="mt-2 hover:cursor-pointer" src="assets/theme-btn.png" alt=""></button>
+                </div>
             </div>
-            <div class="ml-5 bg-blue-100 p-2 rounded-full">
-                <button><img src="assets/theme-btn.png" alt=""></button>
-            </div>
+           
                 
             
               
             
           </div>
     </header>
-    <main>
-        <div class="grid   grid-cols-3 ">
-            <div class="grid grid-cols-3 gap-6 col-span-2">
+    <main class="max-w-screen-xl mx-auto ">
+        <div class="grid   grid-cols-3 gap-4 ">
+            <div class="grid grid-cols-3 p-5 rounded-xl bg-white gap-4 col-span-2">
             
-                <div class="flex w-72 bg-blue-50 p-4 rounded-xl">
-                    <div class="bg-white p-3 rounded-full ">
-                        <img class="mt-2" src="assets/checkbox.png" alt="">
+                <div class="flex w-52 mb-12 bg-blue-50 p-4 rounded-xl">
+                    <div class="bg-white  p-3 rounded-full ">
+                        <img class="mt-3" src="assets/checkbox.png" alt="">
                     </div>
                     
                     <div class="ml-4 mt-5 abs">
                         <h5 class="text-center">Task Assigned</h5>
-                        <h2>05</h2>
+                        <h2 id="taskComplete" class="font-bold text-xl">6</h2>
                     </div>
                 </div>
-                <div class="flex min-w-96 -ml-7 bg-gradient-to-l to-blue-500 from-slate-400 p-4 rounded-xl">
+                <button id="nextbtn" class="hover:cursor-pointer">
+                    <div class="flex mb-12 min-w-88 -ml-14  bg-gradient-to-l to-blue-500 from-slate-400 p-4 rounded-xl">
                     <img src="assets/board.png" alt="">
                     <h4 class="text-white mt-4">Discover Something <br> New Today!</h4>
                 </div>
-                <div class="flex w-auto ml-10 bg-blue-50 p-4 rounded-xl">
+                </button>
+                <div class="flex mb-12 w-56 ml-8 bg-blue-50 p-4 rounded-xl">
                     <div class="bg-white p-3 rounded-full">
-                        <img class="mt-2" src="assets/calender.png" alt="">
+                        <img class="mt-3" src="assets/calender.png" alt="">
                     </div>
                     
-                    <div class="ml-4 mt-2 "><h4>wed,</h4>
-                    <h4 class="font-bold">july 28 2025</h4></div>
+                    <div class="ml-4 mt-2 ">
+                    <h4 id="current-date" class="font-bold"></h4>
+                </div>
                 </div>
             
             <div class="bg-blue-50 rounded-lg p-5 ">
@@ -69,11 +76,11 @@
                 <h3 class="font-bold my-2">Fix Mobile Button Issue</h3>
                 <p class="bg-white text-gray-400 rounded-md p-2 my-5">Debug using Chrome <br>
                 DevTools, check for overlappi...</p>
-                <div class="flex gap-9  justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex   justify-between">
+                    <div><h4 class="text-gray-400">Deadline</h4>
+                    <h6 class="font-semibold">21 march 2025</h6>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button  id="btn1"  class="bg-blue-500 rounded-md p-2 hover:cursor-pointer  complete-btn">Completed</button></div> 
                 </div>
                 
             </div>
@@ -82,11 +89,11 @@
                 <h3 class="font-bold my-2">Add Dark Mode</h3>
                 <p class="bg-white rounded-md text-gray-400 p-2 my-5">Debug using Chrome
                     DevTools, check for overlappi..</p>
-                <div class="flex gap-9  justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex   justify-between">
+                    <div><h4 class="text-gray-400"> Deadline</h4>
+                    <h4 class="font-semibold">21 march 2025</h4>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button id="btn2" onclick="btn2()" class="bg-blue-500 rounded-md p-2 hover:cursor-pointer complete-btn ">Completed</button></div>
                 </div>
                 
             </div>
@@ -95,11 +102,11 @@
                 <h3 class="font-bold my-2">Optimize Home page</h3>
                 <p class="bg-white rounded-md p-2 my-5 text-gray-400">Debug using Chrome <br>
                 DevTools, check for overlappi...</p>
-                <div class="flex gap-9  justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex   justify-between">
+                    <div><h4 class="text-gray-400">Deadline</h4>
+                    <h4 class="font-semibold">21 march 2025</h4>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button id="btn3" onclick="btn3()" class="bg-blue-500 rounded-md p-2 hover:cursor-pointer complete-btn">Completed</button></div>
                 </div>
                 
             </div>
@@ -108,11 +115,11 @@
                 <h3 class="font-bold my-2">Add new emoji</h3>
                 <p class="bg-white rounded-md p-2 my-5 text-gray-400">Debug using Chrome <br>
                 DevTools, check for overlappi...</p>
-                <div class="flex gap-9  justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex   justify-between">
+                    <div><h4 class="text-gray-400">Deadline</h4>
+                    <h4 class="font-semibold">21 march 2025</h4>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button id="btn4" onclick="btn4()" class="bg-blue-500 rounded-md p-2 hover:cursor-pointer complete-btn">Completed</button></div>
                 </div>
                 
             </div>
@@ -121,11 +128,11 @@
                 <h3 class="font-bold my-2">Integrate OpenAI API</h3>
                 <p class="bg-white rounded-md text-gray-400 p-2 my-5">Debug using Chrome <br>
                 DevTools, check for overlappi...</p>
-                <div class="flex gap-9 justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex  justify-between">
+                    <div><h4 class="text-gray-400">Deadline</h4>
+                    <h4 class="font-semibold">21 march 2025</h4>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button id="btn5" onclick="btn5()" class="bg-blue-500 rounded-md p-2 hover:cursor-pointer complete-btn">Completed</button></div>
                 </div>
                 
             </div>
@@ -134,24 +141,32 @@
                 <h3 class="font-bold my-2">Improve job searching</h3>
                 <p class="bg-white rounded-md p-2 my-4 text-gray-400">Debug using Chrome <br>
                 DevTools, check for overlappi...</p>
-                <div class="flex gap-9 my-2 justify-between">
-                    <div><h4>deadline</h4>
-                    <h4 class="font-bold">21 march 2025</h4>
+                <div class="flex  my-2 justify-between">
+                    <div><h4 class="text-gray-400">Deadline</h4>
+                    <h4 class="font-semibold">21 march 2025</h4>
                 </div>
-                <div><button class="bg-blue-500 rounded-md p-2 ">Completed</button></div>
+                <div><button id="btn6" onclick="btn6()" class="bg-blue-500 rounded-md p-2 hover:cursor-pointer">Completed</button></div>
                 </div>
                 
             </div>
             
         </div>
-        <div class="text-center ">
-            <h4 class="font-bold"><i class="fa-solid mr-4 fa-clock-rotate-left"></i>Activity Log</h4>
+        <div  class=" bg-white rounded-xl ">
+            <h4 class="font-bold mt-3 text-center"><i class="fa-solid mr-4 fa-clock-rotate-left"></i>Activity Log</h4>
             <br>
-            <button class="bg-blue-500 p-2 rounded-md">Clear History</button>
+            <div class="text-center"><button id="clearHistory" class="bg-blue-500 p-2 rounded-md hover:cursor-pointer ">Clear History</button></div>
+
+            <div id="container" class="mt-5 p-5 mx-5 rounded-md my-5">
+                
+            </div>
+            
         </div>
+        
         </div>
         
        
     </main>
+
+    <script src="color.js"></script>
 </body>
 </html>
